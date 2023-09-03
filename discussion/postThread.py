@@ -1,11 +1,16 @@
 import json
 from datetime import datetime
-
 from pythorhead import Lemmy
 
-from helpers import getTimestamp
-
 community = "gunners@lemmy.world"
+
+
+def getTimestamp():
+    dt = str(datetime.now().month) + '/' + str(datetime.now().day) + ' '
+    hr = str(datetime.now().hour) if len(str(datetime.now().hour)) > 1 else '0' + str(datetime.now().hour)
+    minute = str(datetime.now().minute) if len(str(datetime.now().minute)) > 1 else '0' + str(datetime.now().minute)
+    t = '[' + hr + ':' + minute + '] '
+    return dt + t
 
 
 def createBody():
