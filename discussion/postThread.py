@@ -21,7 +21,7 @@ def createTitle():
 
 
 def login():
-    with open("config.json") as file:
+    with open("../config.json") as file:
         config = json.load(file)
     file.close()
     lemmy = Lemmy(f'https://{config["instance"]}')
